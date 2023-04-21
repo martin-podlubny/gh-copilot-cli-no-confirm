@@ -17,6 +17,11 @@ I wish they had a CLI flag like `--no-confirm`/`-y` or something like that, but 
 ## Installation
 
 1. Copy the script to your preferred location (for me just `~/`)
+
+    ```bash
+    wget https://raw.githubusercontent.com/martin-podlubny/gh-copilot-cli-no-confirm/main/gh-what-the-shell-no-confirm.sh -O ~/gh-what-the-shell-no-confirm.sh
+    ```
+
 2. Source the script in your shell configuration file (e.g. `~/.bashrc` or `~/.zshrc`) after the GitHub Copilot CLI's own setup, like:
     
     ```bash
