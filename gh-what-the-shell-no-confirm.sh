@@ -67,8 +67,17 @@ copilot_what-the-shell-no-confirm () {
   # This if/else is ripped off from the original ?? alias definition.
   if [ -s "$tmp_cmd_file" ]; then
       cmd_itself=$(cat $tmp_cmd_file);
-      history -s $(history 1 | cut -d' ' -f4-);
-      history -s "$cmd_itself";
+
+      case "$(basename $SHELL)" in
+        bash|ksh|tcsh)
+          history -s $(history 1 | cut -d' ' -f4-);
+          history -s "$cmd_itself";
+          ;;
+        zsh)
+          print -s "$cmd_itself";
+          ;;
+      esac
+
       eval "$cmd_itself";
   fi
 }
