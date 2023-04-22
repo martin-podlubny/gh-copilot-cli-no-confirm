@@ -70,6 +70,7 @@ copilot_what-the-shell-no-confirm () {
       history -s $(history 1 | cut -d' ' -f4-);
       history -s "$cmd_itself";
       eval "$cmd_itself";
+  fi
 }
 
 # override the stock ?? alias...
